@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інвестиційний сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ваш кабінет</h1>
+
+        <!-- Баланс -->
+        <div class="block">
+            <h3>Ваш інвестиційний баланс:</h3>
+            <p><span id="user-investment">3.00</span>$</p>
+            <button id="deposit-button">Депозит</button>
+        </div>
+
+        <!-- Дохід -->
+        <div class="block">
+            <h3>Ваш дохід:</h3>
+            <p><span id="user-income">0.000000</span>$</p>
+            <button id="withdraw-button">Вивести</button>
+            <button id="reinvest-button">Реінвестувати</button>
+        </div>
+
+        <!-- Калькулятор -->
+        <div class="block">
+            <h3>Калькулятор доходу:</h3>
+            <input type="number" id="calc-amount" placeholder="Сума інвестицій ($)">
+            <p>Щоденний дохід: <span id="daily-income">0.000000</span>$</p>
+            <p>Щотижневий дохід: <span id="weekly-income">0.000000</span>$</p>
+            <p>Щомісячний дохід: <span id="monthly-income">0.000000</span>$</p>
+        </div>
+
+        <!-- Реферальна програма -->
+        <div class="block">
+            <h3>Реферальна програма:</h3>
+            <p><strong>Отримуйте 0.10$ за запрошення!</strong></p>
+            <p><strong>Отримуйте 10% від поповнень реферала!</strong></p>
+            <p>Кількість запрошених друзів: <span id="referral-count">0</span></p>
+            <p>Дохід від запрошень: <span id="referral-income">0.00</span>$</p>
+            <p>Дохід від поповнень: <span id="referral-deposit-income">0.00</span>$</p>
+            <p>Ваше реферальне посилання:</p>
+            <p><strong><span id="referral-link">Посилання з'явиться після реєстрації</span></strong></p>
+        </div>
+
+        <!-- Статистика -->
+        <div class="footer">
+            <p>Кількість користувачів: <span id="user-count">1</span></p>
+            <p>Баланс проекту: <span id="project-balance">3.00</span>$</p>
+        </div>
+    </div>
+
+    <!-- Модальні вікна -->
+    <div class="modal hidden" id="deposit-modal">
+        <h3>Заявка на депозит</h3>
+        <p>Адреса гаманця для депозиту:</p>
+        <p style="font-weight: bold; color: #28a745;">1234567890USDT</p>
+        <input type="number" id="deposit-amount" placeholder="Сума депозиту ($)">
+        <button id="confirm-deposit">Відправити заявку</button>
+        <button id="close-deposit">Закрити</button>
+    </div>
+
+    <div class="modal hidden" id="withdraw-modal">
+        <h3>Заявка на виведення</h3>
+        <input type="number" id="withdraw-amount" placeholder="Сума для виведення ($)">
+        <input type="text" id="wallet-address" placeholder="Ваш гаманець">
+        <button id="confirm-withdraw">Відправити заявку</button>
+        <button id="close-withdraw">Закрити</button>
+    </div>
+
+    <div class="overlay hidden" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
